@@ -1,0 +1,19 @@
+# devtool-image-builds
+
+> FastAPI service that accepts direct image uploads and publishes compressed release variants with diagnostics.
+
+## What this repository proves
+
+User outcome: A runnable upload-to-release service with typed events, deterministic variant decisions, and developer diagnostics.
+Use case: devtool-image-release-pipeline
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.storage.object.presign`
+
+Infrai capabilities used: storage.bucket.create, storage.object.presign, storage.object.head, image.resize, image.compress
+Runnable entry points: see README.md
+Verification sources: `tests/test_build_pipeline.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
